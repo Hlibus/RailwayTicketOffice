@@ -1,0 +1,25 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<header class="header">
+    <c:choose>
+        <c:when test="${login == null || roleId == null}">
+<%--            <ul class="header-page-links">--%>
+<%--                <li><a href="main">Main page</a></li>--%>
+<%--            </ul>--%>
+            <%@include file="headerLinks.jspf"%>
+            <ul class="header-account-links">
+                <li><a href="logIn">Log in</a></li>
+                <li><a href="registration">Sign up</a></li>
+            </ul>
+        </c:when>
+        <c:otherwise>
+<%--            <ul class="header-page-links">--%>
+<%--                <li><a href="main">Main page</a></li>--%>
+<%--            </ul>--%>
+            <%@include file="headerLinks.jspf"%>
+            <ul class="header-account-links">
+                <li><a href="">${login}</a></li>
+                <li><a href="logOut">Log out</a></li>
+            </ul>
+        </c:otherwise>
+    </c:choose>
+</header>

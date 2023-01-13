@@ -1,0 +1,27 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:choose>
+    <c:when test="${roleId == '2'}">
+        <ul class="header-page-links">
+            <li><a href="main">Main page</a></li>
+            <li><a href="getTravelSettings">Travel settings</a></li>
+            <li><a href="getRouteSettings">Route settings</a></li>
+            <li><a href="getStationSettings">Station settings</a></li>
+            <li><a href="getTrainSettings">Train settings</a></li>
+        </ul>
+    </c:when>
+    <c:when test="${roleId == '1'}">
+        <ul class="header-page-links">
+            <li><a href="main">Main page</a></li>
+        </ul>
+    </c:when>
+    <c:when test="${roleId == '3'}">
+        <ul class="header-page-links">
+            <li><a href="main">Main page</a></li>
+        </ul>
+    </c:when>
+    <c:otherwise>
+        <ul class="header-page-links">
+            <li><a href="main">Main page</a></li>
+        </ul>
+    </c:otherwise>
+</c:choose>
